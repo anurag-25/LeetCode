@@ -1,17 +1,17 @@
 class Solution {
 public:
-    int numberOfArithmeticSlices(vector<int>& nums) {
-        int n = nums.size(), res =0;
-        if (n<3) return 0;
+    vector<int> twoSum(vector<int>& nums, int target) {
+        unordered_map <int, int> m;
+        vector <int> ans;
         
-        vector <int> ans (n, 0);
-        
-        for (int i=2; i<n; i++) {
-            if (nums[i]-nums[i-1] == nums[i-1]-nums[i-2]){
-                ans[i] = 1 + ans[i-1];
-                res += ans[i];
+        for (int i=0; i<nums.size(); i++) {
+            if (m.find(target-nums[i]) != m.end() ) {
+                ans.push_back (i);
+                ans.push_back (m[target-nums[i]]);
+                break;
             }
+            else m[nums[i]] = i;
         }
-        return res;
+        return ans;
     }
 };
