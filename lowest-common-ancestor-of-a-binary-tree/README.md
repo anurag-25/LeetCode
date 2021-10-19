@@ -18,7 +18,7 @@
 </pre>
 
 <p><strong>Example 3:</strong></p>
-
+	
 <pre><strong>Input:</strong> root = [1,2], p = 1, q = 2
 <strong>Output:</strong> 1
 </pre>
